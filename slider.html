@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sliders</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      var slide = $('#slide'),
+          content = $('#content'),
+          link = $('.link');
+
+          link.each(function(i){
+            $(this).click(function(){
+              slide.animate({
+                marginTop: -i * content.height()
+
+              });
+            });
+          });
+    });
+  </script>
+<style media="screen">
+  div{
+    position: relative;
+  }
+
+  #center{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid black;
+  }
+
+  #nav{
+    overflow: hidden;
+    border-bottom: 1px dotted grey;
+  }
+
+  .link {
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #content {
+    float: left;
+    width: 500px;
+    height: 521px;
+    overflow: hidden;
+  }
+
+  .section{
+    padding: 10px;
+    height: 500px;
+    border-bottom: 1px dotted black;
+  }
+
+</style>
+  </head>
+  <body>
+    <div id="center">
+                <div id="nav">
+                  <div class="link">One</div>
+                  <div class="link">Dos</div>
+                  <div class="link">Tiga</div>
+                  <div class="link">Quarto</div>
+                </div>
+
+
+                <div id="content">
+                    <div id="slide">
+                      <div class="section">One</div>
+                      <div class="section">Dos</div>
+                      <div class="section">Tiga</div>
+                      <div class="section">Quarto</div>
+                    </div>
+                </div>
+        </div>
+  </body>
+</html>
